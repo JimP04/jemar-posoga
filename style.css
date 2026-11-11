@@ -22,3 +22,7 @@
 }
 .chip-top { right: -20px; }
 .chip-bottom { left: -20px; }
+
+.floating-chip {
+  z-index: 3;
+}

@@ -20,3 +20,5 @@
   object-position: center 20%;
   display: block;
 }
+.chip-top { right: -20px; }
+.chip-bottom { left: -20px; }

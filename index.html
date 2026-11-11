@@ -1,37 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jemar Albaos Posoga — Medical Intake Specialist & Virtual Assistant</title>
+    <title>Jemar Albaos Posoga — Executive VA & Medical Intake Specialist</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script>
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
                     colors: {
                         brand: {
                             50: '#f0fdf4',
                             100: '#dcfce7',
+                            400: '#4ade80',
                             500: '#22c55e',
                             600: '#16a34a',
                             700: '#15803d',
                             900: '#14532d',
+                            950: '#052e16',
                         }
                     }
                 }
             }
         }
     </script>
+    <style>
+        /* Print Styles to allow instant, error-free PDF saving via browser Print functionality */
+        @media print {
+            body * {
+                visibility: hidden;
+            }
+            #printable-cv, #printable-cv * {
+                visibility: visible;
+            }
+            #printable-cv {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                margin: 0;
+                padding: 20px;
+                background-color: #ffffff !important;
+                color: #0f172a !important;
+                font-size: 11pt;
+            }
+            .no-print {
+                display: none !important;
+            }
+            .page-break {
+                page-break-before: always;
+            }
+        }
+    </style>
 </head>
-<body class="bg-slate-900 text-slate-100 font-sans antialiased selection:bg-brand-500 selection:text-white">
+<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-brand-500 selection:text-white">
 
-    <!-- HEADER / HERO SECTION -->
-    <header class="relative overflow-hidden border-b border-slate-800 bg-slate-950/50 backdrop-blur sticky top-0 z-50">
+    <!-- HEADER / NAVIGATION -->
+    <header class="no-print border-b border-slate-800/80 bg-slate-950/80 backdrop-blur-md sticky top-0 z-50">
         <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-xl font-bold tracking-tight text-white flex items-center gap-2">
+            <a href="#" class="text-xl font-bold tracking-tight text-white flex items-center gap-2.5">
                 <span class="w-3 h-3 rounded-full bg-brand-500 animate-pulse"></span>
                 Jemar A. Posoga
             </a>
@@ -43,96 +75,364 @@
                 <a href="#references" class="hover:text-brand-400 transition">References</a>
                 <a href="#contact" class="hover:text-brand-400 transition">Contact</a>
             </nav>
-            <button onclick="downloadCV()" class="bg-brand-600 hover:bg-brand-700 text-white text-sm font-semibold px-4 py-2 rounded-lg shadow transition flex items-center gap-2 cursor-pointer">
-                <i class="fa-solid fa-download"></i> Resume
-            </button>
+            <div class="flex items-center gap-3">
+                <button onclick="triggerPrintCV()" class="bg-brand-600 hover:bg-brand-700 text-white text-xs md:text-sm font-semibold px-4 py-2 rounded-lg shadow-lg hover:shadow-brand-500/20 transition flex items-center gap-2 cursor-pointer">
+                    <i class="fa-solid fa-file-pdf"></i> Download CV (PDF)
+                </button>
+            </div>
         </div>
     </header>
 
-    <!-- HERO -->
-    <section class="py-16 md:py-24 max-w-5xl mx-auto px-6 text-center">
-        <!-- Profile Photo -->
-        <div class="mb-8">
-            <img src="Profile.jpeg" alt="Jemar Albaos Posoga" class="w-36 h-36 md:w-44 md:h-44 rounded-full mx-auto border-4 border-brand-500/80 shadow-2xl object-cover bg-slate-800">
+    <!-- HERO SECTION -->
+    <section class="no-print py-16 md:py-24 max-w-5xl mx-auto px-6 text-center">
+        <div class="relative inline-block mb-8">
+            <img src="Profile.jpeg" onerror="this.onerror=null; this.src='https://placehold.co/200x200/1e293b/4ade80?text=Jemar+Posoga';" alt="Jemar Albaos Posoga" class="w-36 h-36 md:w-44 md:h-44 rounded-full mx-auto border-4 border-brand-500/80 shadow-2xl object-cover bg-slate-800">
+            <span class="absolute bottom-2 right-2 w-5 h-5 bg-brand-500 border-2 border-slate-950 rounded-full" title="Available for Hiring"></span>
         </div>
 
         <div class="inline-block bg-brand-500/10 border border-brand-500/20 text-brand-400 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider mb-6">
-            Medical Intake Specialist | Customer Service Expert | General & E-Commerce Virtual Assistant
+            Medical Intake Specialist | Customer Service Expert | Virtual Assistant
         </div>
         <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-white mb-6 leading-tight">
-            Streamlining Operations & Scaling <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-emerald-300">Business Excellence</span>
+            Streamlining Operations & Delivering <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-emerald-300">Service Excellence</span>
         </h1>
-        <p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10">
-            Versatile, results-driven professional skilled in medical intake, EHR administration, technical troubleshooting, and e-commerce store support.
+        <p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
+            Versatile, results-driven professional skilled in medical intake, EHR administration, Tier-2 technical support, and e-commerce virtual assistance.
         </p>
         <div class="flex flex-wrap justify-center gap-4">
             <a href="#experience" class="bg-brand-600 hover:bg-brand-700 text-white font-semibold px-6 py-3 rounded-xl shadow-lg hover:shadow-brand-500/25 transition">
                 Explore Experience
             </a>
-            <button onclick="downloadCV()" class="bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold px-6 py-3 rounded-xl border border-slate-700 transition flex items-center gap-2 cursor-pointer">
-                <i class="fa-solid fa-file-arrow-down text-brand-400"></i> Download CV (PDF)
+            <button onclick="triggerPrintCV()" class="bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold px-6 py-3 rounded-xl border border-slate-700 transition flex items-center gap-2 cursor-pointer">
+                <i class="fa-solid fa-download text-brand-400"></i> Download / Print CV (PDF)
             </button>
         </div>
-        <div class="mt-12 text-slate-500 italic text-sm max-w-xl mx-auto">
-            “Your success is my priority. Here to support you every click of the way with dedication, reliability, and a commitment to excellence[cite: 18].”
+        <div class="mt-10 text-slate-500 italic text-sm max-w-xl mx-auto border-t border-slate-900 pt-6">
+            “Your success is my priority. Here to support you every click of the way with dedication, reliability, and a commitment to excellence.”
         </div>
     </section>
 
-    <!-- ABOUT / MISSION / GOAL -->
-    <section id="about" class="py-16 bg-slate-900/60 border-t border-slate-800">
+    <!-- ABOUT SECTION -->
+    <section id="about" class="no-print py-16 bg-slate-900/60 border-t border-slate-800">
         <div class="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
             <div>
-                <h2 class="text-2xl font-bold text-white mb-4">Professional Mission & Goal</h2>
+                <h2 class="text-2xl font-bold text-white mb-4">Professional Mission & Objective</h2>
                 <p class="text-slate-300 leading-relaxed mb-4 text-sm">
-                    To deliver dependable, efficient, and high-quality support by combining excellent customer service, strong organizational skills, and a commitment to continuous improvement[cite: 18]. I strive to create positive experiences, build lasting professional relationships, and contribute to the success of every organization I work with[cite: 18].
+                    To deliver dependable, efficient, and high-quality support by combining excellent customer service, strong organizational skills, and a commitment to continuous improvement. I strive to create positive experiences, build lasting professional relationships, and contribute to the success of every organization I work with.
                 </p>
-                <p class="text-slate-300 leading-relaxed text-sm mb-4">
-                    <strong>Goal:</strong> To continuously expand my knowledge, strengthen my professional skills, and gain valuable experience across customer service and administrative operations to grow into greater responsibilities[cite: 18].
-                </p>
-                <div class="text-sm text-slate-400 space-y-1">
-                    <p><strong class="text-brand-400">Location:</strong> Marikina, Philippines[cite: 18]</p>
+                <div class="text-sm text-slate-400 space-y-2">
+                    <p><strong class="text-brand-400"><i class="fa-solid fa-location-dot mr-1.5"></i> Location:</strong> Marikina City, Philippines</p>
+                    <p><strong class="text-brand-400"><i class="fa-solid fa-graduation-cap mr-1.5"></i> Education:</strong> Bachelor of Secondary Education — Pamantasan ng Lungsod ng Marikina</p>
                 </div>
             </div>
-            <div class="bg-slate-800/80 p-6 rounded-2xl border border-slate-700/80 shadow-xl space-y-4">
+            <div class="bg-slate-800/60 p-6 rounded-2xl border border-slate-700/80 shadow-xl space-y-4">
                 <h3 class="text-lg font-semibold text-white">Core Competencies</h3>
                 <div class="flex flex-wrap gap-2">
-                    <span class="bg-slate-700 text-slate-200 text-xs px-3 py-1.5 rounded-lg font-medium">Customer Service & Client Relations</span>
-                    <span class="bg-slate-700 text-slate-200 text-xs px-3 py-1.5 rounded-lg font-medium">Medical Intake & Patient Coordination</span>
-                    <span class="bg-slate-700 text-slate-200 text-xs px-3 py-1.5 rounded-lg font-medium">Administrative & Virtual Assistance</span>
-                    <span class="bg-slate-700 text-slate-200 text-xs px-3 py-1.5 rounded-lg font-medium">Appointment Scheduling</span>
-                    <span class="bg-slate-700 text-slate-200 text-xs px-3 py-1.5 rounded-lg font-medium">Data Entry & Documentation</span>
-                    <span class="bg-slate-700 text-slate-200 text-xs px-3 py-1.5 rounded-lg font-medium">Shopify & Amazon Management</span>
+                    <span class="bg-slate-700/80 text-slate-200 text-xs px-3 py-1.5 rounded-lg font-medium border border-slate-600/50">Medical Intake &amp; EHR</span>
+                    <span class="bg-slate-700/80 text-slate-200 text-xs px-3 py-1.5 rounded-lg font-medium border border-slate-600/50">AdvancedMD Management</span>
+                    <span class="bg-slate-700/80 text-slate-200 text-xs px-3 py-1.5 rounded-lg font-medium border border-slate-600/50">HIPAA Compliance</span>
+                    <span class="bg-slate-700/80 text-slate-200 text-xs px-3 py-1.5 rounded-lg font-medium border border-slate-600/50">Tier 2 Technical Support</span>
+                    <span class="bg-slate-700/80 text-slate-200 text-xs px-3 py-1.5 rounded-lg font-medium border border-slate-600/50">Amazon &amp; Shopify VA</span>
+                    <span class="bg-slate-700/80 text-slate-200 text-xs px-3 py-1.5 rounded-lg font-medium border border-slate-600/50">Salesforce &amp; CRM Systems</span>
+                    <span class="bg-slate-700/80 text-slate-200 text-xs px-3 py-1.5 rounded-lg font-medium border border-slate-600/50">Appointment Scheduling</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- PROFESSIONAL WORK EXPERIENCE -->
-    <section id="experience" class="py-20 max-w-4xl mx-auto px-6">
+    <!-- PROFESSIONAL EXPERIENCE -->
+    <section id="experience" class="no-print py-20 max-w-4xl mx-auto px-6">
         <h2 class="text-3xl font-bold text-white mb-10 text-center">Professional Work Experience</h2>
         
         <div class="space-y-8">
             <!-- PAS Wound Care -->
-            <div class="bg-slate-800/50 p-6 md:p-8 rounded-2xl border border-slate-700/60 shadow-lg relative">
-                <span class="absolute top-6 right-6 bg-brand-500/10 text-brand-400 text-xs font-bold px-3 py-1 rounded-full">2025 - 2026</span>
+            <div class="bg-slate-900 p-6 md:p-8 rounded-2xl border border-slate-800 shadow-lg relative">
+                <span class="absolute top-6 right-6 bg-brand-500/10 text-brand-400 border border-brand-500/20 text-xs font-bold px-3 py-1 rounded-full">2025 - Present</span>
                 <h3 class="text-xl font-bold text-white">Virtual Assistant (Medical Intake Specialist)</h3>
-                <p class="text-brand-400 font-medium mb-4">PAS Wound Care (Physicians & Surgeons) • Full Time[cite: 19]</p>
+                <p class="text-brand-400 font-medium mb-4">PAS Wound Care (Physicians & Surgeons) • Full Time</p>
                 <ul class="text-slate-300 text-sm space-y-2 mb-4 list-disc list-inside">
-                    <li>Served as primary point of contact for patients, ensuring a smooth, organized, and efficient intake process[cite: 19].</li>
-                    <li>Collected, verified, and updated patient demographics, insurance information, and medical histories in the EHR system[cite: 19].</li>
-                    <li>Managed appointment scheduling, confirmations, insurance verification, eligibility checks, referrals, and authorizations[cite: 19].</li>
-                    <li>Maintained accurate, confidential patient records in full compliance with HIPAA standards[cite: 19].</li>
+                    <li>Served as primary point of contact for patients, ensuring a smooth, organized, and efficient intake process.</li>
+                    <li>Collected, verified, and updated patient demographics, insurance information, and medical histories in AdvancedMD & EHR.</li>
+                    <li>Managed patient appointment scheduling, confirmations, referrals, eligibility checks, and HIPAA-compliant recordkeeping.</li>
+                    <li>Handled patient inquiries, reviewed intake forms for completeness, and coordinated with healthcare providers.</li>
                 </ul>
                 <div class="flex flex-wrap gap-2">
-                    <span class="text-xs bg-slate-700 text-slate-300 px-2.5 py-1 rounded">AdvancedMD</span>
-                    <span class="text-xs bg-slate-700 text-slate-300 px-2.5 py-1 rounded">EHR Management</span>
-                    <span class="text-xs bg-slate-700 text-slate-300 px-2.5 py-1 rounded">Insurance Verification</span>
-                    <span class="text-xs bg-slate-700 text-slate-300 px-2.5 py-1 rounded">HIPAA Compliance</span>
+                    <span class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded">AdvancedMD</span>
+                    <span class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded">EHR Systems</span>
+                    <span class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded">HIPAA Compliance</span>
+                    <span class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded">Insurance Verification</span>
                 </div>
             </div>
 
             <!-- Reed Elsevier -->
-            <div class="bg-slate-800/50 p-6 md:p-8 rounded-2xl border border-slate-700/60 shadow-lg relative">
-                <span class="absolute top-6 right-6 bg-slate-700/50 text-slate-300 text-xs font-bold px-3 py-1 rounded-full">2023 - 2025</span>
+            <div class="bg-slate-900 p-6 md:p-8 rounded-2xl border border-slate-800 shadow-lg relative">
+                <span class="absolute top-6 right-6 bg-slate-800 text-slate-400 text-xs font-bold px-3 py-1 rounded-full">2023 - 2025</span>
                 <h3 class="text-xl font-bold text-white">Administrative Assistant</h3>
-                <p class="text-
+                <p class="text-brand-400 font-medium mb-4">Reed Elsevier Philippines • Full Time</p>
+                <ul class="text-slate-300 text-sm space-y-2 mb-4 list-disc list-inside">
+                    <li>Prepared, processed, and distributed official accident reports to drivers, insurance companies, and law enforcement.</li>
+                    <li>Assisted customers with account registrations, portal navigation, login troubleshooting, report pricing, and payment options.</li>
+                    <li>Collaborated closely with police departments to verify and process crash reports in compliance with privacy regulations.</li>
+                </ul>
+                <div class="flex flex-wrap gap-2">
+                    <span class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded">Accident Report Management</span>
+                    <span class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded">Law Enforcement Coordination</span>
+                    <span class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded">Data Privacy</span>
+                </div>
+            </div>
+
+            <!-- Quantrics Enterprises -->
+            <div class="bg-slate-900 p-6 md:p-8 rounded-2xl border border-slate-800 shadow-lg relative">
+                <span class="absolute top-6 right-6 bg-slate-800 text-slate-400 text-xs font-bold px-3 py-1 rounded-full">2021 - 2023</span>
+                <h3 class="text-xl font-bold text-white">End to End Technical Support Representative (Tier 2)</h3>
+                <p class="text-brand-400 font-medium mb-4">Quantrics Enterprises Inc. (Bell Canada) • Full Time</p>
+                <ul class="text-slate-300 text-sm space-y-2 mb-4 list-disc list-inside">
+                    <li>Provided remote technical support and troubleshooting for customer modems, home phones, and TV set-top boxes.</li>
+                    <li>Diagnosed system concerns, created service tickets for technician dispatches, and managed hardware returns.</li>
+                    <li>Programmed and configured customer phone features according to custom service plans.</li>
+                </ul>
+                <div class="flex flex-wrap gap-2">
+                    <span class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded">Technical Troubleshooting</span>
+                    <span class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded">Remote Support</span>
+                    <span class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded">Ticket Management</span>
+                </div>
+            </div>
+
+            <!-- Alorica -->
+            <div class="bg-slate-900 p-6 md:p-8 rounded-2xl border border-slate-800 shadow-lg relative">
+                <span class="absolute top-6 right-6 bg-slate-800 text-slate-400 text-xs font-bold px-3 py-1 rounded-full">2019 - 2021</span>
+                <h3 class="text-xl font-bold text-white">Tier 2 Customer Support Representative</h3>
+                <p class="text-brand-400 font-medium mb-4">Alorica (Amazon Account) • Full Time</p>
+                <ul class="text-slate-300 text-sm space-y-2 mb-4 list-disc list-inside">
+                    <li>Responded to customer inquiries regarding products, order transactions, shipping tracking, and account updates.</li>
+                    <li>Resolved complex customer complaints with empathy and recorded accurate records within CRM systems.</li>
+                </ul>
+                <div class="flex flex-wrap gap-2">
+                    <span class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded">Customer Support</span>
+                    <span class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded">Order Processing</span>
+                    <span class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded">CRM Systems</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS & TOOLS -->
+    <section id="skills" class="no-print py-16 max-w-4xl mx-auto px-6">
+        <h2 class="text-3xl font-bold text-white mb-8 text-center">Tools & Technical Expertise</h2>
+        <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-slate-900 p-6 rounded-xl border border-slate-800">
+                <h3 class="text-lg font-semibold text-brand-400 mb-3"><i class="fa-solid fa-briefcase-medical mr-2"></i> Medical & Support Systems</h3>
+                <div class="flex flex-wrap gap-2">
+                    <span class="bg-slate-800 text-slate-200 text-xs px-3 py-1.5 rounded-lg">AdvancedMD</span>
+                    <span class="bg-slate-800 text-slate-200 text-xs px-3 py-1.5 rounded-lg">EHR Systems</span>
+                    <span class="bg-slate-800 text-slate-200 text-xs px-3 py-1.5 rounded-lg">Salesforce CRM</span>
+                    <span class="bg-slate-800 text-slate-200 text-xs px-3 py-1.5 rounded-lg">Zendesk</span>
+                    <span class="bg-slate-800 text-slate-200 text-xs px-3 py-1.5 rounded-lg">Avaya / RingCentral</span>
+                </div>
+            </div>
+            <div class="bg-slate-900 p-6 rounded-xl border border-slate-800">
+                <h3 class="text-lg font-semibold text-brand-400 mb-3"><i class="fa-solid fa-cart-shopping mr-2"></i> E-Commerce & Productivity</h3>
+                <div class="flex flex-wrap gap-2">
+                    <span class="bg-slate-800 text-slate-200 text-xs px-3 py-1.5 rounded-lg">Amazon Seller Central</span>
+                    <span class="bg-slate-800 text-slate-200 text-xs px-3 py-1.5 rounded-lg">Shopify Store Management</span>
+                    <span class="bg-slate-800 text-slate-200 text-xs px-3 py-1.5 rounded-lg">Google Workspace</span>
+                    <span class="bg-slate-800 text-slate-200 text-xs px-3 py-1.5 rounded-lg">Microsoft Office</span>
+                    <span class="bg-slate-800 text-slate-200 text-xs px-3 py-1.5 rounded-lg">Zoom / Canvas / WhatsApp</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EDUCATION & CERTIFICATIONS -->
+    <section id="education" class="no-print py-16 bg-slate-900/60 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="text-3xl font-bold text-white mb-8 text-center">Education & Certifications</h2>
+            <div class="space-y-4">
+                <div class="bg-slate-900 p-5 rounded-xl border border-slate-800 flex justify-between items-center">
+                    <div>
+                        <h4 class="font-bold text-white">Pamantasan ng Lungsod ng Marikina</h4>
+                        <p class="text-sm text-slate-400">Bachelor of Secondary Education</p>
+                    </div>
+                    <span class="text-xs bg-brand-500/10 text-brand-400 font-semibold px-3 py-1 rounded-full">2014 - 2018</span>
+                </div>
+                <div class="bg-slate-900 p-5 rounded-xl border border-slate-800 flex justify-between items-center">
+                    <div>
+                        <h4 class="font-bold text-white">Executive VA for Amazon &amp; Shopify</h4>
+                        <p class="text-sm text-slate-400">Your VA Buddy Training</p>
+                    </div>
+                    <span class="text-xs bg-slate-800 text-slate-300 font-semibold px-3 py-1 rounded-full">Sept 2026</span>
+                </div>
+                <div class="bg-slate-900 p-5 rounded-xl border border-slate-800 flex justify-between items-center">
+                    <div>
+                        <h4 class="font-bold text-white">Medical VA &amp; Patient Intake (HIPAA)</h4>
+                        <p class="text-sm text-slate-400">PAS Wound Care Training</p>
+                    </div>
+                    <span class="text-xs bg-slate-800 text-slate-300 font-semibold px-3 py-1 rounded-full">Aug 2025</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REFERENCES SECTION -->
+    <section id="references" class="no-print py-16 max-w-4xl mx-auto px-6">
+        <h2 class="text-3xl font-bold text-white mb-8 text-center">Professional References</h2>
+        <div class="grid md:grid-cols-3 gap-4">
+            <div class="bg-slate-900 p-4 rounded-xl border border-slate-800">
+                <h4 class="font-bold text-white text-sm">Mark Mendoza</h4>
+                <p class="text-xs text-brand-400">Manager, Super Locksmith</p>
+                <p class="text-xs text-slate-400 mt-2"><i class="fa-solid fa-phone mr-1"></i> +63 992 570 3446</p>
+            </div>
+            <div class="bg-slate-900 p-4 rounded-xl border border-slate-800">
+                <h4 class="font-bold text-white text-sm">Shaun Agnas</h4>
+                <p class="text-xs text-brand-400">Exec Manager, PAS Wound Care</p>
+                <p class="text-xs text-slate-400 mt-2"><i class="fa-solid fa-phone mr-1"></i> +63 927 473 7513</p>
+            </div>
+            <div class="bg-slate-900 p-4 rounded-xl border border-slate-800">
+                <h4 class="font-bold text-white text-sm">James Abayon</h4>
+                <p class="text-xs text-brand-400">CS Rep, Concentrix</p>
+                <p class="text-xs text-slate-400 mt-2"><i class="fa-solid fa-phone mr-1"></i> +63 950 409 0481</p>
+            </div>
+            <div class="bg-slate-900 p-4 rounded-xl border border-slate-800">
+                <h4 class="font-bold text-white text-sm">Michelle Paccalagan</h4>
+                <p class="text-xs text-brand-400">Charge Assoc, The Medical City</p>
+                <p class="text-xs text-slate-400 mt-2"><i class="fa-solid fa-phone mr-1"></i> +63 967 384 2042</p>
+            </div>
+            <div class="bg-slate-900 p-4 rounded-xl border border-slate-800">
+                <h4 class="font-bold text-white text-sm">Mark Boracan</h4>
+                <p class="text-xs text-brand-400">SME, Cognizant</p>
+                <p class="text-xs text-slate-400 mt-2"><i class="fa-solid fa-phone mr-1"></i> +63 961 573 2663</p>
+            </div>
+            <div class="bg-slate-900 p-4 rounded-xl border border-slate-800">
+                <h4 class="font-bold text-white text-sm">Angelica Epifanie Nacido</h4>
+                <p class="text-xs text-brand-400">Lead Gen, Cloudstaff</p>
+                <p class="text-xs text-slate-400 mt-2"><i class="fa-solid fa-phone mr-1"></i> +63 951 665 7172</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="no-print py-20 max-w-4xl mx-auto px-6 text-center border-t border-slate-800">
+        <h2 class="text-3xl font-bold text-white mb-4">Let's Work Together</h2>
+        <p class="text-slate-400 mb-8 max-w-lg mx-auto">Looking for a dedicated Medical Intake Specialist or Virtual Assistant? Reach out through any channel below.</p>
+        
+        <div class="flex flex-wrap justify-center gap-4 text-slate-300 text-sm">
+            <a href="mailto:posogajemar04@gmail.com" class="flex items-center gap-2 bg-slate-900 hover:bg-slate-800 px-5 py-3 rounded-xl border border-slate-800 transition">
+                <i class="fa-solid fa-envelope text-brand-400"></i> posogajemar04@gmail.com
+            </a>
+            <a href="tel:+639924068040" class="flex items-center gap-2 bg-slate-900 hover:bg-slate-800 px-5 py-3 rounded-xl border border-slate-800 transition">
+                <i class="fa-solid fa-phone text-brand-400"></i> (+63) 992 406 8040
+            </a>
+            <a href="https://www.linkedin.com/in/jemar-posoga-364363302/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 bg-slate-900 hover:bg-slate-800 px-5 py-3 rounded-xl border border-slate-800 transition">
+                <i class="fa-brands fa-linkedin text-brand-400"></i> LinkedIn
+            </a>
+            <button onclick="triggerPrintCV()" class="bg-brand-600 hover:bg-brand-700 text-white px-5 py-3 rounded-xl shadow-lg transition flex items-center gap-2 cursor-pointer">
+                <i class="fa-solid fa-file-pdf"></i> Download CV (PDF)
+            </button>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="no-print border-t border-slate-900 py-6 text-center text-xs text-slate-500">
+        <p>© 2026 Jemar Albaos Posoga. All rights reserved.</p>
+    </footer>
+
+    <!-- PRINTABLE RESUME TEMPLATE (Hidden from normal UI, visible only during print/PDF export) -->
+    <div id="printable-cv" class="hidden print:block text-slate-900 bg-white p-6 max-w-4xl mx-auto">
+        <div class="border-b-2 border-slate-900 pb-4 mb-4 flex justify-between items-start">
+            <div>
+                <h1 class="text-2xl font-bold uppercase tracking-tight text-slate-900">Jemar Albaos Posoga</h1>
+                <p class="text-xs font-semibold text-brand-700 uppercase tracking-wide mt-1">Medical Intake Specialist • Customer Service Expert • Executive Virtual Assistant</p>
+                <p class="text-xs text-slate-600 mt-2">Marikina, Philippines | posogajemar04@gmail.com | (+63) 992 406 8040</p>
+            </div>
+        </div>
+
+        <div class="mb-4">
+            <h2 class="text-sm font-bold uppercase border-b border-slate-300 pb-1 mb-2">Professional Summary</h2>
+            <p class="text-xs text-slate-700 leading-relaxed">
+                Versatile, results-driven professional with experience in customer service, medical intake, and administrative support. Skilled in managing patient inquiries, appointment scheduling, EHR administration (AdvancedMD), and HIPAA compliance. Recognized for adaptability, attention to detail, and operational efficiency.
+            </p>
+        </div>
+
+        <div class="mb-4">
+            <h2 class="text-sm font-bold uppercase border-b border-slate-300 pb-1 mb-2">Work Experience</h2>
+            <div class="space-y-3">
+                <div>
+                    <div class="flex justify-between font-bold text-xs">
+                        <span>Virtual Assistant (Medical Intake Specialist) — PAS Wound Care</span>
+                        <span>2025 – Present</span>
+                    </div>
+                    <ul class="list-disc list-inside text-xs text-slate-700 mt-1 space-y-0.5">
+                        <li>Primary point of contact for patient intake, appointment scheduling, and EHR record management.</li>
+                        <li>Verified insurance eligibility, handled referrals, and ensured strict HIPAA privacy standards compliance.</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="flex justify-between font-bold text-xs">
+                        <span>Administrative Assistant — Reed Elsevier Philippines</span>
+                        <span>2023 – 2025</span>
+                    </div>
+                    <ul class="list-disc list-inside text-xs text-slate-700 mt-1 space-y-0.5">
+                        <li>Processed official accident reports for insurance agencies and law enforcement.</li>
+                        <li>Managed high-volume stakeholder correspondence while maintaining strict data privacy compliance.</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="flex justify-between font-bold text-xs">
+                        <span>End to End Technical Support (Tier 2) — Quantrics Enterprises (Bell Canada)</span>
+                        <span>2021 – 2023</span>
+                    </div>
+                    <ul class="list-disc list-inside text-xs text-slate-700 mt-1 space-y-0.5">
+                        <li>Diagnosed device issues via remote tools, managed service ticket dispatches, and processed returns.</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="flex justify-between font-bold text-xs">
+                        <span>Tier 2 Customer Support Representative — Alorica (Amazon Account)</span>
+                        <span>2019 – 2021</span>
+                    </div>
+                    <ul class="list-disc list-inside text-xs text-slate-700 mt-1 space-y-0.5">
+                        <li>Handled customer order processing, shipping tracking, CRM recordkeeping, and complaint resolution.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-4">
+            <h2 class="text-sm font-bold uppercase border-b border-slate-300 pb-1 mb-2">Technical Skills &amp; Tools</h2>
+            <p class="text-xs text-slate-700">AdvancedMD, EHR Systems, Salesforce CRM, Amazon Seller Central, Shopify, Zendesk, Avaya, RingCentral, Google Workspace, HIPAA Compliance.</p>
+        </div>
+
+        <div>
+            <h2 class="text-sm font-bold uppercase border-b border-slate-300 pb-1 mb-2">Education &amp; Credentials</h2>
+            <p class="text-xs text-slate-700"><strong>Bachelor of Secondary Education</strong> — Pamantasan ng Lungsod ng Marikina (2014–2018)</p>
+            <p class="text-xs text-slate-700"><strong>Executive VA (Amazon &amp; Shopify)</strong> — Your VA Buddy (Sept 2026)</p>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT HANDLERS -->
+    <script>
+        function triggerPrintCV() {
+            // Check if local file exists first (for local environment setups)
+            fetch("Jemar_Posoga_CV.pdf", { method: 'HEAD' })
+                .then(res => {
+                    if (res.ok) {
+                        // Download existing local PDF file if available
+                        const a = document.createElement('a');
+                        a.href = "Jemar_Posoga_CV.pdf";
+                        a.download = "Jemar_Posoga_CV.pdf";
+                        document.body.appendChild(a);
+                        a.click();
+                        document.body.removeChild(a);
+                    } else {
+                        // Fallback to high-quality browser print engine (saves as PDF)
+                        window.print();
+                    }
+                })
+                .catch(() => {
+                    // Direct print fallback to eliminate 404 screens entirely
+                    window.print();
+                });
+        }
+    </script>
+</body>
+</html>

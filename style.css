@@ -1296,3 +1296,43 @@ a {
     width: 100%;
   }
 }
+/* TOOLS & PLATFORMS BOXES */
+
+.tool-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.tool-grid div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  transition: 0.3s ease;
+}
+
+.tool-grid div:hover {
+  border-color: #0d9488;
+  transform: translateY(-2px);
+}
+
+.tool-grid div i {
+  color: #0d9488;
+  width: 20px;
+  height: 20px;
+}
+
+.tool-grid div b {
+  font-size: 14px;
+  color: #101b2a;
+}
+
+@media (max-width: 480px) {
+  .tool-grid {
+    grid-template-columns: 1fr;
+  }
+}
